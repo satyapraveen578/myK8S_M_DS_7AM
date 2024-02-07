@@ -3,12 +3,14 @@ kind: Service
 metadata:
   name: myjavaapp-svc
   labels:
-     app: myjavaapp
-spec:
-  type: NodePort
-  ports:
-  - port: 8080
-    nodeport: 30001
-    protocol: TCP
-  selector: 
     app: myjavaapp
+    version: 2.6.3
+spec:
+   type: NodePort
+   ports:
+   - port: 8080
+     nodePort: 30001
+     protocol: TCP
+   selector:
+     app: myjavaapp
+     version: 2.6.3
